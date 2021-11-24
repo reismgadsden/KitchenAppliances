@@ -26,3 +26,14 @@ a.topLink:hover {
     text-decoration: underline;
     color: #a3a3a3;
 }
+
+.bodyText {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bolder;
+    color: #f3f3f3;
+}
+
+p.bodyText {
+    font-size: 15px;
+}
