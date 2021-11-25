@@ -21,7 +21,7 @@
                 $check_vendor_result = null;
                 
                 if (preg_match("/^[0-9]+$/", $vendor) !== 1) {
-                    echo "<h1 class='bodyText'>Vendor ID field is formatted incorrectly. Please go back and try again.</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Go Back</a></p>";
+                    echo "<h1 class='bodyText'>Vendor ID field is formatted incorrectly. Please go back and try again.</h1><br/><p class='top_links'><a href='insertSupplier.html' class='topLink'>Go Back</a></p>";
                 }
                 
                 //all input is valid
@@ -30,13 +30,13 @@
                     $check_vendor_result = $mysqli_conn->query($check_vendor);
 
                     if ($check_vendor_result === true || $check_vendor_result->num_rows > 0) {
-                        echo "<h1 class='bodyText'>Supplier already exists.</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Go Back</a></p>";
+                        echo "<h1 class='bodyText'>Supplier already exists.</h1><br/><p class='top_links'><a href='insertSupplier.html' class='topLink'>Go Back</a></p>";
                     }
                     
                     else {
                         $insert_query = "INSERT INTO Supplier VALUES(\"".$name."\", ".$vendor.");";
                         if ($mysqli_conn->query($insert_query) == true) {
-                            echo "<h1 class='bodyText'>Supplier inserted succesfully</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Insert More</a></p>";
+                            echo "<h1 class='bodyText'>Supplier inserted succesfully</h1><br/><p class='top_links'><a href='insertSupplier.html' class='topLink'>Insert More</a></p>";
                         }
                     } 
                 }
