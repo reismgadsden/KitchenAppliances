@@ -14,7 +14,7 @@
     <p class="top_links"><a href="insertItem.html" class="topLink">Insert New Item</a></p>
     <p class="top_links"><a href="insertEmployee.html" class="topLink">Insert New Employee</a></p>
     <p class="top_links"><a href="insertSupplier.html" class="topLink">Insert New Supplier</a></p>
-    <p class="top_links"><a href="lookupCustomer.html" class="topLink">Lookup Customer</a></p>
-    <p class="top_links"><a href="lookupDepartment.html" class="topLink">Lookup Department</a></p>
+    <p class="top_links"><a href="customerLookup.html" class="topLink">Lookup Customer</a></p>
+    <p class="top_links"><a href="departmentLookup.html" class="topLink">Lookup Department</a></p>
     </body>
 </html>

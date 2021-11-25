@@ -4,6 +4,8 @@
         <title>Insert New Item</title>
     </head>
     <body>
+        <img src="kaLogo.svg" width="10%" height="10%" class="center">
+        <br/>
         <p class="top_links"><a href="index.html" class="topLink">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="topLink">Product Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="topLink">Order</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="topLink">Order Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="topLink">Employee Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="admin.html" class="topLink">Admin</a></p>
 
         <?php
@@ -55,7 +57,7 @@
                             $dno = $dno_row["DNumber"];
                             $insert_query = "INSERT INTO Employee VALUES (\"".$sex."\", \"".$dob."\", ".(int)$ssn.", \"".$addy."\", ".(double)$salary.", ".(int)$dno.", \"".$name."\");";
                             if ($mysqli_conn->query($insert_query) == true) {
-                                echo "<h1 class='bodyText'>Item inserted succesfully</h1><br/><p class='top_links'><a href='insertEmployee.html' class='topLink'>Insert More</a></p>";
+                                echo "<h1 class='bodyText'>Employee inserted succesfully</h1><br/><p class='top_links'><a href='insertEmployee.html' class='topLink'>Insert More</a></p>";
                                 break;
                             }
                         }

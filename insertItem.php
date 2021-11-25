@@ -40,11 +40,11 @@
                     $check_department_result = $mysqli_conn->query($check_department);
                     
                     if ($check_vendor_result === false || $check_vendor_result->num_rows == 0) {
-                        echo "<h1 class='bodyText'>Supplier does not exist. Please go back and try again.</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Go Back</a></p>";
+                        echo "<h1 class='bodyText'>Supplier does not exist, consider creating a new supplier or entering an existing vendor id.</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Go Back</a></p>";
                     }
 
                     elseif ($check_department_result === false || $check_department_result->num_rows == 0) {
-                        echo "<h1 class='bodyText'>Department does not exist. Please go back and try again.</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Go Back</a></p>";
+                        echo "<h1 class='bodyText'>Department does not exist. Please go back and try again. The current departments are: Appliances, Silverware, Tableware, Cookware, Delivery, Headquarters;</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Go Back</a></p>";
                     }
                     
                     else {

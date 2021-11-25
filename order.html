@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="landingstyle.css">
+        <title>Order</title>
+    </head>
+    <img src="kaLogo.svg" width="10%" height="10%" class="center">
+    <br/>
+    <p class="top_links"><a href="index.html" class="topLink">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="topLink">Product Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="topLink">Order</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="topLink">Order Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="topLink">Employee Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="admin.html" class="topLink">Admin</a></p>
+    <body>
+        <form action="order.php" method="get">
+            <p>Order by Item PLU:&nbsp;&nbsp;<input type="text" name="order_plu"></p>
+            <p>Delivery Address:&nbsp;&nbsp;<input type="text" name="addy"></p>
+            <p>Payment Method:&nbsp;&nbsp;<input list="payment_methods" name="method"></p>
+            <datalist id="payment_methods">
+                <option value="Credit Card">
+                <option value="Debit Card">
+                <option value="Cash">
+                <option value="BTC">
+                <option value="ETH">
+                <option value="XMR">
+            </datalist>
+            <div style="text-align: center">
+                <input type="submit" value="Order">
+            </div>
+        </form>
+    </body>
+</html>
