@@ -43,31 +43,30 @@
                 elseif (preg_match("/^[0-9]+$/", $vendor) !== 1) {
                     echo "<h1 class='bodyText'>Vendor ID field is formatted incorrectly. Please go back and try again.</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Go Back</a></p>";
                 }
-                
-                elseif (preg_match("/^[0-9]+$/", $vendor) !== 0) {
+                //all input is valid
+                else {        
                     $check_vendor = "SELECT s.Vendor_ID FROM Supplier as s WHERE s.Vendor_ID=".(int)$vendor.";";
                     $check_vendor_result = $mysqli_conn->query($check_vendor);
+
                     if ($check_vendor_result === false || $check_vendor_result->num_rows == 0) {
                         echo "<h1 class='bodyText'>Supplier does not exist. Please go back and try again.</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Go Back</a></p>";
                     }
-                }
-                
-                elseif ($check_department_result === false || $check_department_result->num_rows == 0) {
-                    echo "<h1 class='bodyText'>Department does not exist. Please go back and try again.</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Go Back</a></p>";
-                }
-                
-                //all input is valid
-                else {
-                    $dno_query = "SELECT d.DNumber FROM Department as d WHERE UPPER(d.DName) LIKE UPPER(\"".$department."\")";
-                    $dno_result = $mysqli_conn->query($dno_query);
-                    while($dno_row = $dno_result->fetch_assoc()) {
-                        $dno = $dno_row["DNumber"];
-                        $insert_query = "INSERT INTO ITEM(Item_PLU, Name, Dno, Vendor_ID, Price) VALUES (\"".$plu."\", \"".$name."\", ".(int)$dno.", ".(int)$vendor.", ".(double)$price.")";
-                        if ($mysqli_conn->query($insert_query) == true) {
-                            echo "<h1 class='bodyText'>Item inserted succesfully</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Insert More</a></p>";
-                        }
+
+                    elseif ($check_department_result === false || $check_department_result->num_rows == 0) {
+                        echo "<h1 class='bodyText'>Department does not exist. Please go back and try again.</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Go Back</a></p>";
                     }
                     
+                    else {
+                        $dno_query = "SELECT d.DNumber FROM Department as d WHERE UPPER(d.DName) LIKE UPPER(\"".$department."\")";
+                        $dno_result = $mysqli_conn->query($dno_query);
+                        while($dno_row = $dno_result->fetch_assoc()) {
+                            $dno = $dno_row["DNumber"];
+                            $insert_query = "INSERT INTO ITEM(Item_PLU, Name, Dno, Vendor_ID, Price) VALUES (\"".$plu."\", \"".$name."\", ".(int)$dno.", ".(int)$vendor.", ".(double)$price.")";
+                            if ($mysqli_conn->query($insert_query) == true) {
+                                echo "<h1 class='bodyText'>Item inserted succesfully</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Insert More</a></p>";
+                            }
+                        }
+                    } 
                 }
             }
         ?>
