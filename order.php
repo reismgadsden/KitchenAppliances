@@ -6,7 +6,7 @@
     <body>
     <img src="kaLogo.svg" width="10%" height="10%" class="center">
     <br/>
-    <p class="top_links"><a href="index.html" class="topLink">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="topLink">Product Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="topLink">Order</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="topLink">Order Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="topLink">Employee Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="admin.html" class="topLink">Admin</a></p>
+    <p class="top_links"><a href="index.html" class="topLink">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="productSearch.html" class="topLink">Product Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="order.html" class="topLink">Order</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="orderLookup.html" class="topLink">Order Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="employeeLookup.html" class="topLink">Employee Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="admin.html" class="topLink">Admin</a></p>
         <?php
             include("./connection.php");
         
@@ -23,7 +23,7 @@
             }
             
             else {
-                $check_item_query = "SELECT * FROM ITEM WHERE Item_PLU=\"".$plu."\";";
+                $check_item_query = "SELECT Name, Item_PLU FROM ITEM WHERE Item_PLU=\"".$plu."\";";
                 $check_item_result = $mysqli_conn->query($check_item_query);
                 
                 if ($check_item_result === false || $check_item_result->num_rows == 0){
@@ -31,8 +31,15 @@
                 }
                 
                 else {
+                    $item_name = "";
+                    
+                    while ($item_row = $check_item_result->fetch_assoc()) {
+                        $item_name .= $item_row["Name"];
+                        break;
+                    }
+                    
                     $purchase_key = "";
-                    $seed = str_split("abcdefghijklmnopqrstuwxyz");
+                    $seed = str_split("abcdefghijklmnopqrstuvwxyz");
                     
                     $counter = 0;
                     while ($counter < 16) {
@@ -69,6 +76,11 @@
                     $mysqli_conn->query($insert_customer_query);
                     echo "<h1 class='bodyText'>Order #".$purchase_key." recieved succesfully!</h1>";
                     echo "<p>Make sure to record your order number!</p>";
+                    echo "<br/><h1 class='bodyText'Your Order Details</h1>";
+                    echo "<p>Your order no.: #".$purchase_key."</p>";
+                    echo "<p>Item / Item PLU Ordered: ".$item_name." / ".$plu."</p>";
+                    echo "<p>Destination: ".$addy."</p>";
+                    echo "<p>Delivery Agent: ".$delivery_employee_name."</p>";
                     echo "<br/><p><a href='index.html' class='topLink'>Home</a></p>";
                 }
             }
