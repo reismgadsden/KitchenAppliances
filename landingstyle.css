@@ -33,6 +33,21 @@ a.topLink:hover {
     color: #a3a3a3;
 }
 
+a:link {
+    text-decoration: underline;
+    color: #f3f3f3;
+}
+
+a:visited {
+    text-decoration: underline;
+    color: #f3f3f3;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #a3a3a3;
+}
+
 .bodyText {
     text-align: center;
     font-family: sans-serif;
