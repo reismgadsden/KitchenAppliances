@@ -24,6 +24,10 @@
                     echo "<h1 class='bodyText'>Price field is formatted incorrectly. Please go back and try again.</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Go Back</a></p>";
                 }
                 
+                elseif(preg_match("/^([A-Z]|[a-z]|[0-9]|\\s){1,30}$/", $name) !== 1) {
+                    echo "<h1 class='bodyText'>Name field is too long (character limit: 30). Please go back and try again.</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Go Back</a></p>";
+                }
+                
                 elseif (preg_match("/^[0-9]{12}$/", $plu) !== 1) {
                     echo "<h1 class='bodyText'>Item PLU field is formatted incorrectly. Please go back and try again.</h1><br/><p class='top_links'><a href='insertItem.html' class='topLink'>Go Back</a></p>";
                 }
@@ -36,7 +40,7 @@
                     $check_vendor = "SELECT s.Vendor_ID FROM Supplier as s WHERE s.Vendor_ID=".(int)$vendor.";";
                     $check_vendor_result = $mysqli_conn->query($check_vendor);
 
-                    $check_department = "SELECT d.DName FROM department AS d WHERE UPPER(d.DName) LIKE UPPER(\"".$department."\");";
+                    $check_department = "SELECT d.DName FROM Department AS d WHERE UPPER(d.DName) LIKE UPPER(\"".$department."\");";
                     $check_department_result = $mysqli_conn->query($check_department);
                     
                     if ($check_vendor_result === false || $check_vendor_result->num_rows == 0) {
