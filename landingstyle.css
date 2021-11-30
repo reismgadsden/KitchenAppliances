@@ -5,6 +5,12 @@
     width: 50%;
 }
 
+.tableCenter {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
 .top_links {
     text-align: center;
     font-size: 25px;
@@ -40,12 +46,28 @@ body {
     background-attachment: fixed;
 }
 
-p{
+p, td{
     text-align: center;
     font-family: sans-serif;
     font-weight: bolder;
     color: #f3f3f3;
     font-size: 15px;
+}
+
+th {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bolder;
+    color: #f3f3f3;
+    font-size: 20px;
+}
+
+tr>th {
+    padding-bottom: 1.5em;
+}
+
+tr>td {
+    padding-bottom: 1em;
 }
 
 .heading {

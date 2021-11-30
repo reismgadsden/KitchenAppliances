@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "id18006240_gadsdenrm";
-$password = "Appstate123!";
-$dbname = "id18006240_kitchenappliances";
+$username = "root";
+$password = "Kaori1234";
+$dbname = "KitchenAppliance";
 
 
 // Create connection
