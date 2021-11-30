@@ -4,7 +4,7 @@
         <title>Kitchen Appliances</title>
     </head>
     <body>
-        <img src="kaLogo.svg" width="10%" height="10%" class="center">
+        <a href="index.html"><img src="kaLogo.svg" width="10%" height="10%" class="center"></a>
         <br/>
         <p class="top_links"><a href="index.html" class="topLink">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="productSearch.html" class="topLink">Product Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="order.html" class="topLink">Order</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="orderLookup.html" class="topLink">Order Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="admin.html" class="topLink">Admin</a></p>
       <h1 class="bodyText">Order Look-Up</h1>

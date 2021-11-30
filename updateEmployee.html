@@ -1,14 +1,23 @@
 <html>
     <head>
         <link rel="stylesheet" href="landingstyle.css">
-        <title>Department Lookup</title>
+        <title>Update Employee</title>
     </head>
     <body>
         <a href="index.html"><img src="kaLogo.svg" width="10%" height="10%" class="center"></a>
         <br/>
         <p class="top_links"><a href="index.html" class="topLink">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="productSearch.html" class="topLink">Product Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="order.html" class="topLink">Order</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="orderLookup.html" class="topLink">Order Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="admin.html" class="topLink">Admin</a></p>
-        <form action="departmentLookup.php" method="get">
-            <p>Department Name:&nbsp;&nbsp;<input list="depts" name="dept"></p>
+
+        <form action="updateEmployee.php" method="get">
+            <p>SSN:&nbsp;&nbsp;<input type="text" name="ssn"></p>
+            <br/>
+            <p>(Leave field blank if no change)</p>
+            <input type="hidden" name="addy" value=" ">
+            <p>New Address:&nbsp;&nbsp;<input type="text" name="addy"></p>
+            <input type="hidden" name="salary" value=" ">
+            <p>New Salary:&nbsp;&nbsp;$<input type="text" name="salary"></p>
+            <input type="hidden" name="dept" value=" ">
+            <p>New Department:&nbsp;&nbsp;<input list="depts" name="dept"></p>
             <datalist id="depts">
                 <option value="Appliances">
                 <option value="Silverware">
@@ -18,6 +27,8 @@
                 <option value="Sales">
                 <option value="Headquarters">
             </datalist>
+            <input type="hidden" name="mgmt" value=" ">
+            <p>Manager of Department:&nbsp;&nbsp;<input type="checkbox" name="mgmt" value="t"></p>
             <div style="text-align: center">
                 <input type="submit" value="Submit">
             </div>

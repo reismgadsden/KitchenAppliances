@@ -4,7 +4,7 @@
         <title>Insert New Item</title>
     </head>
     <body>
-        <img src="kaLogo.svg" width="10%" height="10%" class="center">
+        <a href="index.html"><img src="kaLogo.svg" width="10%" height="10%" class="center"></a>
         <br/>
         <p class="top_links"><a href="index.html" class="topLink">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="productSearch.html" class="topLink">Product Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="order.html" class="topLink">Order</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="orderLookup.html" class="topLink">Order Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="admin.html" class="topLink">Admin</a></p>
 
@@ -18,6 +18,7 @@
             $ssn = $_GET["ssn"];
             $dname = $_GET["dname"];
             $salary = $_GET["salary"];
+            $mgmt = $_GET["mgmt"];
         
             if (!isset($name) || !isset($sex) || !isset($dob) || !isset($addy) || !isset($ssn) || !isset($dname) || !isset($salary) || trim($name) == '' || trim($sex) == '' || trim($dob) == '' || trim($addy) == '' || trim($ssn) == '' || trim($dname) == '' || trim($dname) == '') {
                 echo "<h1 class='bodyText'>Required field(s) missing. Please go back and try again.</h1><br/><p class='top_links'><a href='insertEmployee.html' class='topLink'>Go Back</a></p>";
@@ -58,8 +59,15 @@
                             $insert_query = "INSERT INTO Employee VALUES (\"".$sex."\", \"".$dob."\", ".(int)$ssn.", \"".$addy."\", ".(double)$salary.", ".(int)$dno.", \"".$name."\");";
                             if ($mysqli_conn->query($insert_query) == true) {
                                 echo "<h1 class='bodyText'>Employee inserted succesfully</h1><br/><p class='top_links'><a href='insertEmployee.html' class='topLink'>Insert More</a></p>";
-                                break;
+                                if ($mgmt === "t") {
+                                    $update_query = "UPDATE Department SET Manager_SSN=\"".$ssn."\" WHERE DNumber=".(int)$dno.";";
+                                    $mysqli_conn->query($update_query);
+                                }
                             }
+                            else {
+                                echo "<h1 class='bodyText'>Employee already exists</h1><br/><p class='top_links'><a href='insertEmployee.html' class='topLink'>Go back</a></p>";
+                            }
+                            break;
                         }
                     }
                 } 

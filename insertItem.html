@@ -4,13 +4,19 @@
         <title>Insert New Item</title>
     </head>
     <body>
-        <img src="kaLogo.svg" width="10%" height="10%" class="center">
+        <a href="index.html"><img src="kaLogo.svg" width="10%" height="10%" class="center"></a>
         <br/>
         <p class="top_links"><a href="index.html" class="topLink">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="productSearch.html" class="topLink">Product Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="order.html" class="topLink">Order</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="orderLookup.html" class="topLink">Order Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="admin.html" class="topLink">Admin</a></p>
 
         <form action="insertItem.php" method="get">
             <p>Item Name:&nbsp;&nbsp;<input type="text" name="name"></p>
-            <p>Department Name:&nbsp;&nbsp;<input type="text" name="department"></p>
+            <p>Department Name:&nbsp;&nbsp;<input list="depts" name="department"></p>
+            <datalist id="depts">
+                <option value="Appliances">
+                <option value="Silverware">
+                <option value="Tableware">
+                <option value="Cookware">
+            </datalist>
             <p>Price:&nbsp;&nbsp;$<input type="text" name="price"></p>
             <p>Item PLU:&nbsp;&nbsp;<input type="text" name="item_plu"></p>
             <p>Vendor ID:&nbsp;&nbsp;<input type="text" name="vendor_id"></p>

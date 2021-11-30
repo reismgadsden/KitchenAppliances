@@ -4,7 +4,7 @@
         <title>Order</title>
     </head>
     <body>
-    <img src="kaLogo.svg" width="10%" height="10%" class="center">
+    <a href="index.html"><a href="index.html"><img src="kaLogo.svg" width="10%" height="10%" class="center"></a></a>
     <br/>
     <p class="top_links"><a href="index.html" class="topLink">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="productSearch.html" class="topLink">Product Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="order.html" class="topLink">Order</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="orderLookup.html" class="topLink">Order Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="admin.html" class="topLink">Admin</a></p>
         <?php
@@ -83,7 +83,6 @@
                     }
                     
                     $insert_customer_query = "INSERT INTO Customer Values(\"".$addy."\", \"".$purchase_key."\", \"".$method."\", \"".$plu."\", \"".$delivery_employee_ssn."\", \"".$name."\");";
-                    echo "<p>".$insert_customer_query."</p>";
                     $mysqli_conn->query($insert_customer_query);
                     echo "<h1 class='bodyText'>Order #".$purchase_key." recieved succesfully!</h1>";
                     echo "<p>Make sure to record your order number!</p>";

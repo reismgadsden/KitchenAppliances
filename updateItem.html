@@ -1,15 +1,21 @@
 <html>
     <head>
         <link rel="stylesheet" href="landingstyle.css">
-        <title>Customer Lookup</title>
+        <title>Update Item</title>
     </head>
     <body>
         <a href="index.html"><img src="kaLogo.svg" width="10%" height="10%" class="center"></a>
         <br/>
         <p class="top_links"><a href="index.html" class="topLink">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="productSearch.html" class="topLink">Product Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="order.html" class="topLink">Order</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="orderLookup.html" class="topLink">Order Look-Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="admin.html" class="topLink">Admin</a></p>
 
-        <form action="customerLookup.php" method="get">
-            <p>Purchase Key:&nbsp;&nbsp;<input type="text" name="pk"></p>
+        <form action="updateItem.php" method="get">
+            <p>Item PLU:&nbsp;&nbsp;<input type="text" name="plu"></p>
+            <br/>
+            <p>(Leave field blank if no change)</p>
+            <input type="hidden" name="name" value="">
+            <p>New Name:&nbsp;&nbsp;<input type="text" name="name"></p>
+            <input type="hidden" name="price" value="">
+            <p>New Price:&nbsp;&nbsp;$<input type="text" name="price"></p>
             <div style="text-align: center">
                 <input type="submit" value="Submit">
             </div>
