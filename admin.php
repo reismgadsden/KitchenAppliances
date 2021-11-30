@@ -14,10 +14,10 @@
     <p class="top_links"><a href="insertItem.html" class="topLink">Insert New Item</a></p>
     <p class="top_links"><a href="insertEmployee.html" class="topLink">Insert New Employee</a></p>
     <p class="top_links"><a href="insertSupplier.html" class="topLink">Insert New Supplier</a></p>
-    <p class="top_links"><a href="employeeLookup.html" class="topLink">Lookup Employee</a></p>
-    <p class="top_links"><a href="customerLookup.html" class="topLink">Lookup Customer</a></p>
     <p class="top_links"><a href="departmentLookup.html" class="topLink">Lookup Department</a></p>
-    <p class="top_links"><a href="updateItem.html" class="topLink">Update Item</a></p>
-    <p class="top_links"><a href="updateEmployee.html" class="topLink">Update Employee</a></p>
+    <p class="top_links"><a href="employeeLookup.html" class="topLink">Lookup Employee by SSN</a></p>
+    <p class="top_links"><a href="customerLookup.html" class="topLink">Lookup Customer by Purchase Key</a></p>
+    <p class="top_links"><a href="updateItem.html" class="topLink">Update Item Name and Price by Item PLU</a></p>
+    <p class="top_links"><a href="updateEmployee.html" class="topLink">Update Employee Info by SSN</a></p>
     </body>
 </html>

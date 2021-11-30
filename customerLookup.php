@@ -26,7 +26,7 @@
                     $search_query = "SELECT c.Address, c.Item_PLU, i.Name, c.Form_Of_Payement, c.Purchase_Key, e.name, e.ssn, c.Name as cName FROM Customer AS c, ITEM as i, Employee as e WHERE c.Purchase_Key=\"".$pk."\" AND e.ssn=c.Delivery_Employee_SSN AND i.Item_PLU=c.Item_PLU;";
                     $search_result = $mysqli_conn->query($search_query);
                     if ($search_result === false || $search_result->num_rows == 0) {
-                        echo "<h1 class='bodyText'>No customer with corresponding purchase key exits. Please go back and try again.</h1><br/><p class='top_links'><a href='customerLookup.html' class='topLink'>Go Back</a></p>";
+                        echo "<h1 class='bodyText'>No customer with corresponding purchase key exists. Please go back and try again.</h1><br/><p class='top_links'><a href='customerLookup.html' class='topLink'>Go Back</a></p>";
                     }
                     else {
                         while($customer_row = $search_result->fetch_assoc()) {

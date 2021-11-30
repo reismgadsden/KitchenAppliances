@@ -105,7 +105,7 @@
                             while($name_row = $name_search_results->fetch_assoc()){
                                 echo "<tr>";
                                 echo "<td>".$name_row["Name"]."</td>";
-                                echo "<td>".$name_row["Price"]."</td>";
+                                echo "<td>$".$name_row["Price"]."</td>";
                                 echo "<td>".$name_row["Item_PLU"]."</td>";
                                 echo "</tr>";
                             }
